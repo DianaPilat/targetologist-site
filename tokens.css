@@ -1,0 +1,100 @@
+/* ============================================================
+   Design tokens - single source of truth. Mood: Warm Editorial (light).
+   Rules: neutrals + ONE accent (terracotta); secondary accent max once
+   per page; max 3 font families; components read only from these variables.
+   ============================================================ */
+
+html { scrollbar-gutter: stable; } /* avoids layout shift when content becomes scrollable */
+
+:root {
+  --hue: 80; /* warm cream/brown family shared by every surface and the ink */
+
+  /* Surface ladder: light theme, so raise/elev separate via tint + shadow */
+  --surface-base:  oklch(97% 0.015 var(--hue));
+  --surface-raise: oklch(99% 0.008 var(--hue));
+  --surface-elev:  oklch(94% 0.020 var(--hue));
+  --surface-ink:   oklch(22% 0.025 var(--hue)); /* dark band for contrast rhythm */
+
+  /* Ink: one color, four alphas */
+  --ink-primary: oklch(22% 0.025 var(--hue));
+  --ink-soft:    oklch(22% 0.025 var(--hue) / 0.80);
+  --ink-quiet:   oklch(22% 0.025 var(--hue) / 0.66); /* checked >= 4.5:1 on cream */
+  --ink-faint:   oklch(22% 0.025 var(--hue) / 0.30); /* decoration only */
+  --hairline:    oklch(22% 0.025 var(--hue) / 0.10);
+  --ink-on-dark:       oklch(97% 0.015 var(--hue));
+  --ink-on-dark-soft:  oklch(97% 0.015 var(--hue) / 0.76);
+  --hairline-on-dark:  oklch(97% 0.015 var(--hue) / 0.16);
+
+  /* Accent: the single dominant brand color */
+  --accent:        oklch(55% 0.14 40);   /* text/links on cream: >= 4.5:1 */
+  --accent-bright: oklch(72% 0.13 45);   /* accent on the dark band */
+  --accent-soft:   oklch(55% 0.14 40 / 0.55);
+  --accent-faint:  oklch(55% 0.14 40 / 0.14);
+  --accent-hover:  oklch(48% 0.14 40);
+  --on-accent:     oklch(98% 0.01 var(--hue));
+
+  /* Typography: each family has ONE job */
+  --font-display: "Fraunces", Georgia, serif;                              /* headings, big numbers */
+  --font-ui:      "DM Sans", -apple-system, system-ui, "Segoe UI", sans-serif; /* body + UI */
+
+  --fs-h1:    clamp(44px, 7vw, 84px);
+  --fs-h2:    clamp(30px, 4.2vw, 48px);
+  --fs-h3:    26px;
+  --fs-h4:    20px;
+  --fs-stat:  clamp(44px, 6vw, 72px);
+  --fs-lead:  20px;
+  --fs-body:  16px;
+  --fs-small: 14px;
+  --fs-label: 12px; /* uppercase + letter-spacing 0.1em */
+
+  --lh-tight: 1.05;
+  --lh-snug:  1.2;
+  --lh-base:  1.6;
+
+  /* Spacing: 4px base */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;
+  --space-9: 96px;  --space-10: 128px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --measure:       640px; /* max width for section intros and body copy */
+  --container-px:  32px;
+  --section-py:    96px;
+  --header-h:      64px;
+  --touch:         44px;  /* minimum touch target */
+
+  /* Shape: formal editorial, 4px everywhere */
+  --radius:       4px;
+  --radius-input: 4px;
+
+  /* Elevation: two-layer shadows, warm-tinted */
+  --shadow-sm: 0 1px 2px oklch(30% 0.03 var(--hue) / 0.10), 0 1px 1px oklch(30% 0.03 var(--hue) / 0.06);
+  --shadow-md: 0 8px 20px oklch(30% 0.03 var(--hue) / 0.10), 0 2px 4px oklch(30% 0.03 var(--hue) / 0.06);
+  --shadow-lg: 0 24px 48px oklch(30% 0.03 var(--hue) / 0.14), 0 8px 16px oklch(30% 0.03 var(--hue) / 0.08);
+
+  /* Motion: one easing curve for everything */
+  --ease:     cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast:   180ms var(--ease); /* hover/color feedback; over ~200ms feels laggy */
+  --t-medium: 500ms var(--ease); /* reveals */
+  --t-hero:   700ms var(--ease); /* one-time entrance on load */
+  --stagger:  70ms;              /* delay between siblings; reads as a sequence, not a lag */
+  --count-ms: 1600;              /* stat count-up duration, read by JS */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-h3: 22px;
+    --fs-lead: 18px;
+    --section-py: 64px;
+    --container-px: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t-medium: 0ms; --t-hero: 0ms; --stagger: 0ms; --count-ms: 0; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Visible focus for keyboard users */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

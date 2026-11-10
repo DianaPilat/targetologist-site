@@ -1,6 +1,6 @@
 /* ============================================================
    Design tokens - single source of truth. Mood: Warm Editorial (light).
-   Rules: neutrals + ONE accent (terracotta); secondary accent max once
+   Rules: neutrals + ONE accent (willow green); secondary accent max once
    per page; max 3 font families; components read only from these variables.
    ============================================================ */
 
@@ -26,11 +26,11 @@ html { scrollbar-gutter: stable; } /* avoids layout shift when content becomes s
   --hairline-on-dark:  oklch(97% 0.015 var(--hue) / 0.16);
 
   /* Accent: the single dominant brand color */
-  --accent:        oklch(55% 0.14 40);   /* text/links on cream: >= 4.5:1 */
-  --accent-bright: oklch(72% 0.13 45);   /* accent on the dark band */
-  --accent-soft:   oklch(55% 0.14 40 / 0.55);
-  --accent-faint:  oklch(55% 0.14 40 / 0.14);
-  --accent-hover:  oklch(48% 0.14 40);
+  --accent:        oklch(46% 0.07 140);  /* deep willow: text/links on cream, >= 4.5:1 */
+  --accent-bright: oklch(80% 0.09 140);  /* light willow on the dark band */
+  --accent-soft:   oklch(46% 0.07 140 / 0.55);
+  --accent-faint:  oklch(70% 0.08 140 / 0.18); /* willow tint for fills */
+  --accent-hover:  oklch(39% 0.07 140);
   --on-accent:     oklch(98% 0.01 var(--hue));
 
   /* Typography: each family has ONE job */
@@ -60,7 +60,7 @@ html { scrollbar-gutter: stable; } /* avoids layout shift when content becomes s
   --container-max: 1200px;
   --measure:       640px; /* max width for section intros and body copy */
   --container-px:  32px;
-  --section-py:    96px;
+  --section-py:    40px;
   --header-h:      64px;
   --touch:         44px;  /* minimum touch target */
 
@@ -86,7 +86,7 @@ html { scrollbar-gutter: stable; } /* avoids layout shift when content becomes s
   :root {
     --fs-h3: 22px;
     --fs-lead: 18px;
-    --section-py: 64px;
+    --section-py: 28px;
     --container-px: 20px;
   }
 }

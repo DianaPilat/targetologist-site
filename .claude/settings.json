@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i '/<p class=\"label\" data-en=\"Process\">Процесс<\\\\/p>/d' index.html)",
+      "Bash(sed -i '63s/96px/60px/;89s/64px/40px/' tokens.css)",
+      "Bash(ls -la /c/Users/diana/targetologist-site/public; ls -la \"/c/Users/diana/AppData/Local/Temp/claude/c--Users-diana-targetologist-site/594cd324-3e4a-43d3-89f4-9e9bc1087b49/images/\")",
+      "Read(//c/Users/diana/AppData/Local/Temp/claude/c--Users-diana-targetologist-site/594cd324-3e4a-43d3-89f4-9e9bc1087b49/images//**)"
+    ]
+  }
+}

@@ -115,10 +115,6 @@ p { margin: 0; }
 
 /* CTA band */
 /* Raised panel with an accent edge so the band reads as a deliberate break, not a stray heading */
-.cta-band { padding-block: var(--space-7); }
-.cta-band .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-5); background: var(--surface-raise); border: 1px solid var(--accent-faint); border-left: 4px solid var(--accent); border-radius: var(--radius); box-shadow: var(--shadow-md); padding: var(--space-6) var(--space-7); }
-.cta-band h2 { font-size: var(--fs-h3, var(--fs-h2)); line-height: var(--lh-snug); text-wrap: balance; }
-.cta-band .btn { flex-shrink: 0; }
 
 /* Experience: heading left, supporting copy right, so the long headline stops running across the page */
 #experience .section-head { display: grid; grid-template-columns: 5fr 6fr; column-gap: var(--space-8); align-items: start; margin-bottom: 0; }
@@ -126,7 +122,6 @@ p { margin: 0; }
 #experience .section-head p { margin-top: 0; font-size: var(--fs-body, 1rem); }
 #experience .section-head p + p { margin-top: var(--space-4); }
 @media (max-width: 768px) {
-  .cta-band .container { padding: var(--space-5); }
   #experience .section-head { grid-template-columns: 1fr; }
   #experience .section-head h2 { grid-row: auto; margin-bottom: var(--space-5); }
 }

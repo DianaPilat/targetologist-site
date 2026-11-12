@@ -152,6 +152,9 @@ p { margin: 0; }
 .contact-links { list-style: none; padding: 0; margin: var(--space-6) 0 0; }
 .contact-links a { display: inline-flex; align-items: center; min-height: var(--touch); text-decoration: none; transition: color var(--t-fast); }
 .contact-links a:hover { color: var(--accent-bright); }
+.messengers { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
+.messenger { display: inline-flex; width: 48px; height: 48px; border-radius: 50%; transition: transform var(--t-fast), opacity var(--t-fast); }
+.messenger:hover { transform: translateY(-2px); opacity: .9; }
 form { display: grid; gap: var(--space-4); }
 label { font-size: var(--fs-small); color: var(--ink-on-dark-soft); display: grid; gap: var(--space-2); }
 input, textarea {

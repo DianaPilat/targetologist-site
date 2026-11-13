@@ -100,9 +100,7 @@ p { margin: 0; }
 .card h3 { font-size: var(--fs-h3); line-height: var(--lh-snug); margin-top: var(--space-4); }
 .card p { color: var(--ink-soft); margin-top: var(--space-3); }
 .card:nth-child(1) { grid-column: span 3; }
-.card:nth-child(2) { grid-column: span 3; margin-top: var(--space-7); }
-.card:nth-child(n+3) { grid-column: span 3; }
-.card:nth-child(n+3):nth-child(even) { margin-top: var(--space-5); }
+.card:nth-child(n+2) { grid-column: span 3; }
 .card p + p { margin-top: var(--space-3); }
 
 /* Process: numbered steps */
